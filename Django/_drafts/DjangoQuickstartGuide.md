@@ -142,7 +142,7 @@ urlpatterns = [
 
 Now `localhost:8000` should show `home.html`:
 
-![Homepage](img/homepage.png)
+![Homepage](../img/homepage.png)
 
 ## Passing data from Django to HTML templates
 
@@ -197,7 +197,7 @@ def home(request):
 
 Now `localhost:8000` should display the data passed:
 
-![Homepage Data](img/homepage_data.png)
+![Homepage Data](../img/homepage_data.png)
 
 ## Admin page
 
@@ -232,11 +232,11 @@ Superuser created successfully.
 
 Login to admin at `http://localhost:8000/admin/`:
 
-![Admin Login](img/admin_login.png)
+![Admin Login](../img/admin_login.png)
 
 View and change user information:
 
-![Admin Page](img/adminpage.png)
+![Admin Page](../img/adminpage.png)
 
 ## Database Management
 
@@ -381,7 +381,7 @@ urlpatterns = [
 
 Now, `localhost:8000/register/` should show the form:
 
-![Register Form](img/register_page.png)
+![Register Form](../img/register_page.png)
 
 ### Crispy Forms
 
@@ -444,4 +444,4 @@ Update `register.html` to load Crispy Forms tags and use Crispy Forms to filter 
 
 Now, the register page should be formatted nice:
 
-![Crispy Forms](img/crispy_forms.png)
+![Crispy Forms](../img/crispy_forms.png)
