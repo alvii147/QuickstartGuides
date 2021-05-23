@@ -4,7 +4,7 @@ This repository contains quickstart guides to programming languages and technica
 
 Language/Framework | Logo
 -- | --
-[Django](https://alvii147.github.io/QuickstartGuides/Django/pages/DjangoQuickstartGuide) |[![Django Logo](img/resized/django_logo.png)](https://alvii147.github.io/QuickstartGuides/Django/pages/DjangoQuickstartGuide) 
+[Django](https://alvii147.github.io/QuickstartGuides/Django/pages/DjangoQuickstartGuide) | [<img src="https://static.djangoproject.com/img/logos/django-logo-negative.png" height="100">](https://alvii147.github.io/QuickstartGuides/Django/pages/DjangoQuickstartGuide) 
 
-Formatting of the web pages are done using [Typora Markdown Editor](https://typora.io/) under theme [Vue](https://theme.typora.io/theme/Vue/).
+Formatting of the web pages are done using [Typora Markdown Editor](https://typora.io/) under the [Vue](https://theme.typora.io/theme/Vue/) theme.
 
