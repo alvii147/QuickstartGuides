@@ -2,45 +2,51 @@
 
 ## Install Django
 
-### Virtual Environment
+### Virtual Environment (optional)
 
 It's a good idea to work in a virtual environment:
 
-```
-$ python -m venv env
-$ source env/Script/activate
+```bash
+# Create virtual environment
+python3 -m venv env
+# Activate virtual environment
+source env/Script/activate
 ```
 
 ### Install with pip
 
-```
-$ pip install django
+```bash
+pip3 install django
 ```
 
 ## Setup Django project
 
 ### Start new project
 
-Start Django project:
+Start new Django project:
 
-```
-$ django-admin startproject my_project
+```bash
+django-admin startproject my_project
 ```
 
 Run Django server:
 
-```
-$ python manage.py runserver
+```bash
+python3 manage.py runserver
 ```
 
-Django project will be live on `localhost:8000`. Django already creates an admin page in `localhost:8000/admin`.
+Django project will be live on `localhost:8000`:
+
+![Default Page](../img/default_page.png)
 
 ### Change time zone
 
 Open `my_project/settings.py` and add the appropriate time zone to the `TIME_ZONE` variable:
 
 ```python
+...
 TIME_ZONE = 'America/Toronto'
+...
 ```
 
 Look up [tz database time zones.](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
@@ -51,13 +57,13 @@ Look up [tz database time zones.](https://en.wikipedia.org/wiki/List_of_tz_datab
 
 Django can have multiple applications running under a single project. Start a new Django application within your project:
 
-```
-$ python manage.py startapp my_app
+```bash
+python3 manage.py startapp my_app
 ```
 
 This creates a `my_app` directory.
 
-### Add path to app
+### Add app to settings
 
 Open `my_app/apps.py`:
 
@@ -68,7 +74,7 @@ class MyAppConfig(AppConfig):
     name = 'my_app'
 ```
 
-Copy the class name, i.e. "`MyAppConfig`", and paste it in the `INSTALLED_APPS` list in `my_project/settings.py` as "`my_app.apps.MyAppConfig`":
+Copy the class name, i.e. `MyAppConfig`, and paste it in the `INSTALLED_APPS` list in `my_project/settings.py` as `my_app.apps.MyAppConfig`:
 
 ```python
 ...
@@ -106,7 +112,7 @@ Within the `my_app` directory, create `templates/my_app/home.html`:
 
 ### Views
 
-Open `my_app/views.py` and edit it to add your a view to the home page:
+Open `my_app/views.py` and edit it to add your view to the home page:
 
 ```python
 from django.shortcuts import render
@@ -125,7 +131,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('my_app.urls'))
+    path('', include('my_app.urls')),
 ]
 ```
 
@@ -136,7 +142,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.home, name = 'my_app-home')
+    path('', views.home, name = 'my_app-home'),
 ]
 ```
 
@@ -146,7 +152,7 @@ Now `localhost:8000` should show `home.html`:
 
 ## Passing data from Django to HTML templates
 
-Data can be passed from views.py to the HTML templates using the [Jinja2](https://jinja.palletsprojects.com/en/2.11.x/) syntax.
+Data can be passed from Django views to the HTML templates in the form of a dictionary and displayed using [Jinja2](https://jinja.palletsprojects.com/en/2.11.x/) syntax.
 
 `views.py`:
 
@@ -205,22 +211,22 @@ Now `localhost:8000` should display the data passed:
 
 Create new migrations based on the current changes made to the models:
 
-```
-$ python manage.py makemigrations
+```bash
+python3 manage.py makemigrations
 ```
 
 Apply migrations:
 
-```
-$ python manage.py migrate
+```bash
+python3 manage.py migrate
 ```
 
 ### Create new user
 
 Create new user and enter username, email and password:
 
-```
-$ python manage.py createsuperuser
+```bash
+python3 manage.py createsuperuser
 Username (leave blank to use 'user'): alvii147
 Email address: alvii147@gmail.com
 Password: 
@@ -256,9 +262,9 @@ class Posting(models.Model):
 
 After that, create and apply migrations:
 
-```
-$ python manage.py makemigrations
-$ python manage.py migrate
+```bash
+python3 manage.py makemigrations
+python3 manage.py migrate
 ```
 
 ### Database queries
@@ -267,20 +273,20 @@ $ python manage.py migrate
 from my_app.models import Posting
 from django.contrib.auth.models import User
 
-# Get all users
+# Get all users (returns a queryset)
 users = User.objects.all()
 
-# Get first user
+# Get first user (returns a queryset)
 user = User.objects.first()
 
-# Filter user by username
+# Filter user by username (returns a queryset)
 user = User.objects.filter(username = 'alvii147').first()
 
 # Get id of user
 user.id
 user.pk
 
-# Get user by id
+# Get user by id (returns a user object)
 User.objects.get(id=1)
 
 # Create new posting by user
@@ -291,7 +297,7 @@ posting.save()
 posting = Posting(title='Posting 2', content='Posting 2 content', author_id=user.id)
 posting.save()
 
-# Get postings by user
+# Get postings by user (returns a queryset)
 user.posting_set.all()
 
 # Create new posting for user
@@ -300,7 +306,7 @@ user.posting_set.create(title='Posting 3', content='Posting 3 content')
 
 ## User Registration Page
 
-Django's built-in User Creation Form includes username and password. To add additional fields to the form, create `forms.py` in the `my_app` directory and create a registration form class that inherits from the User Creation Form class and add additional fields:
+Django's built-in `UserCreationForm` includes username and password. To add additional fields to the form, create `forms.py` in the `my_app` directory and create a registration form class that inherits from the User Creation Form class and add additional fields:
 
 ```python
 from django import forms
@@ -375,7 +381,7 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name = 'my_app-home'),
-    path('register/', views.register, name = 'my_app-register')
+    path('register/', views.register, name = 'my_app-register'),
 ]
 ```
 
@@ -388,7 +394,7 @@ Now, `localhost:8000/register/` should show the form:
 Crispy forms is useful for improving how forms look. Install Django Crispy Forms:
 
 ```
-$ pip install django-crispy-forms
+pip3 install django-crispy-forms
 ```
 
 Add Crispy Forms to `INSTALLED_APPS` in `settings.py`:
@@ -412,7 +418,7 @@ Add `CRISPY_TEMPLATE_PACK` variable at the bottom of `settings.py` to verify boo
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 ```
 
-Update `register.html` to load Crispy Forms tags and use Crispy Forms to filter the forms:
+Update `register.html` to load Crispy Forms tags, use Crispy Forms to filter the forms and include [Bootstrap](https://getbootstrap.com/):
 
 ```html
 {% load crispy_forms_tags %}
@@ -421,9 +427,10 @@ Update `register.html` to load Crispy Forms tags and use Crispy Forms to filter 
 <head>
     <meta charset="utf-8">
     <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body>
-    <div>
+    <div class="container">
         <form method="POST">
             {% csrf_token %}
             <fieldset>
@@ -431,7 +438,7 @@ Update `register.html` to load Crispy Forms tags and use Crispy Forms to filter 
                 {{ form|crispy }}
             </fieldset>
             <div>
-                <button type="submit">Sign Up</button>
+                <button class="btn btn-primary" type="submit">Sign Up</button>
             </div>
         </form>
         <div>
