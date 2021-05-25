@@ -160,3 +160,46 @@ UPDATE my_table SET column1 = 'new_value' WHERE id = 5;
 # delete row in table
 DELETE FROM my_table WHERE id = 5;
 ```
+
+### Join Tables
+
+```mysql
+# inner join two tables
+# contains only rows that match the condition on both tables
+SELECT my_table1.column1, my_table2.column2
+FROM my_table1
+INNER JOIN my_table2
+ON my_table1.column1 = my_table2.column2;
+```
+
+```mysql
+# left join two tables
+# contains all rows from my_table1 and rows that match the condition from my_table2
+SELECT my_table1.column1, my_table2.column2
+FROM my_table1
+LEFT JOIN my_table2
+ON my_table1.column1 = my_table2.column2;
+```
+
+```mysql
+# right join two tables
+# contains all rows from my_table2 and rows that match the condition from my_table1
+SELECT my_table1.column1, my_table2.column2
+FROM my_table1
+RIGHT JOIN my_table2
+ON my_table1.column1 = my_table2.column2;
+```
+
+```mysql
+# union left and right joins to perform full outer join
+# contains all rows from both tables
+SELECT my_table1.column1, my_table2.column2
+FROM my_table1
+LEFT JOIN my_table2
+ON my_table1.column1 = my_table2.column2;
+UNION
+SELECT my_table1.column1, my_table2.column2
+FROM my_table1
+RIGHT JOIN my_table2
+ON my_table1.column1 = my_table2.column2;
+```
