@@ -1,10 +1,10 @@
 # MySQL Quickstart Guide
 
-## Install MySQL Server
+## Installation
 
 Install [MySQL Server](https://dev.mysql.com/downloads/) according to the operating system. Optionally install [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) for convenience.
 
-## Useful Commands
+## Commands
 
 ### Show Databases
 
