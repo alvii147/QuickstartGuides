@@ -161,6 +161,39 @@ UPDATE my_table SET column1 = 'new_value' WHERE id = 5;
 DELETE FROM my_table WHERE id = 5;
 ```
 
+### Insert Columns
+
+```mysql
+# add column of integer data type
+ALTER TABLE my_table ADD column3 INTEGER;
+# add column with default value
+ALTER TABLE my_table ADD column3 INTEGER DEFAULT 5;
+# add column at first position
+ALTER TABLE my_table ADD column3 INTEGER FIRST;
+# add column at a certain position
+ALTER TABLE my_table ADD column3 INTEGER AFTER column2;
+```
+
+### Modify Columns
+
+```mysql
+# modify integer data type of column
+ALTER TABLE my_table MODIFY column1 INTEGER;
+# modify default value of column
+ALTER TABLE my_table MODIFY column3 INTEGER DEFAULT 5;
+# modify position of column to first position
+ALTER TABLE my_table MODIFY column3 INTEGER FIRST;
+# modify position of column to a certain position
+ALTER TABLE my_table MODIFY column3 INTEGER AFTER column2;
+```
+
+### Delete Columns
+
+```mysql
+# delete column
+ALTER TABLE my_table DROP COLUMN column3
+```
+
 ### Join Tables
 
 ```mysql
