@@ -393,7 +393,7 @@ Now, `localhost:8000/register/` should show the form:
 
 Crispy forms is useful for improving how forms look. Install Django Crispy Forms:
 
-```
+```bash
 pip3 install django-crispy-forms
 ```
 
