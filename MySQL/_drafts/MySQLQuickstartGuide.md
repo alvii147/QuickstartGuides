@@ -191,7 +191,7 @@ ALTER TABLE my_table MODIFY column3 INTEGER AFTER column2;
 
 ```mysql
 # delete column
-ALTER TABLE my_table DROP COLUMN column3
+ALTER TABLE my_table DROP COLUMN column3;
 ```
 
 ### Join Tables
