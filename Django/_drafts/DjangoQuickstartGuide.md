@@ -9,8 +9,10 @@ It's a good idea to work in a virtual environment:
 ```bash
 # Create virtual environment
 python3 -m venv env
-# Activate virtual environment
-source env/Script/activate
+# Activate virtual environment (Linux/MacOS)
+source env/bin/activate
+# Activate virtual environment (Windows)
+source env/Scripts/activate
 ```
 
 ### Install with pip
@@ -35,7 +37,7 @@ Run Django server:
 python3 manage.py runserver
 ```
 
-Django project will be live on `localhost:8000`:
+Django project will be live on `http://localhost:8000`:
 
 ![Default Page](../img/default_page.png)
 
@@ -146,7 +148,7 @@ urlpatterns = [
 ]
 ```
 
-Now `localhost:8000` should show `home.html`:
+Now `http://localhost:8000` should show `home.html`:
 
 ![Homepage](../img/homepage.png)
 
@@ -201,7 +203,7 @@ def home(request):
 </html>
 ```
 
-Now `localhost:8000` should display the data passed:
+Now `http://localhost:8000` should display the data passed:
 
 ![Homepage Data](../img/homepage_data.png)
 
@@ -273,21 +275,21 @@ python3 manage.py migrate
 from my_app.models import Posting
 from django.contrib.auth.models import User
 
-# Get all users (returns a queryset)
+# Get all users (returns queryset)
 users = User.objects.all()
 
-# Get first user (returns a queryset)
+# Get first user
 user = User.objects.first()
 
-# Filter user by username (returns a queryset)
-user = User.objects.filter(username = 'alvii147').first()
+# Filter user by username (returns queryset)
+users = User.objects.filter(username = 'alvii147')
+
+# Get user by id (returns user object)
+user = User.objects.get(id=1)
 
 # Get id of user
-user.id
-user.pk
-
-# Get user by id (returns a user object)
-User.objects.get(id=1)
+user_id = user.id
+user_id = user.pk
 
 # Create new posting by user
 posting = Posting(title='Posting 1', content='Posting 1 content', author=user)
@@ -297,8 +299,8 @@ posting.save()
 posting = Posting(title='Posting 2', content='Posting 2 content', author_id=user.id)
 posting.save()
 
-# Get postings by user (returns a queryset)
-user.posting_set.all()
+# Get postings by user (returns queryset)
+postings = user.posting_set.all()
 
 # Create new posting for user
 user.posting_set.create(title='Posting 3', content='Posting 3 content')
@@ -385,7 +387,7 @@ urlpatterns = [
 ]
 ```
 
-Now, `localhost:8000/register/` should show the form:
+Now, `http://localhost:8000/register/` should show the form:
 
 ![Register Form](../img/register_page.png)
 
