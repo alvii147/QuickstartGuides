@@ -1,10 +1,12 @@
-# MySQL Quickstart Guide
+# MySQL Cheat Sheet
+
+This document includes a list of useful MySQL commands.
 
 ## Installing MySQL
 
 Install [MySQL Server](https://dev.mysql.com/downloads/) according to the operating system. Optionally install [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) for convenience.
 
-## Useful Commands
+## Commands
 
 ### Show databases
 
