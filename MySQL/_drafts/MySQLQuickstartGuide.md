@@ -1,40 +1,40 @@
 # MySQL Quickstart Guide
 
-## Install MySQL
+## Installing MySQL
 
 Install [MySQL Server](https://dev.mysql.com/downloads/) according to the operating system. Optionally install [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) for convenience.
 
-## Commands
+## Useful Commands
 
-### Show Databases
+### Show databases
 
 ```mysql
 # show all databases
 SHOW DATABASES;
 ```
 
-### Create Database
+### Create database
 
 ```mysql
 # create new database 'my_db'
 CREATE DATABASE my_db;
 ```
 
-### Delete Database
+### Delete database
 
 ```mysql
 # delete database
 DROP DATABASE my_db;
 ```
 
-### Set Default Database
+### Set default database
 
 ```mysql
 # set default database
 USE my_db;
 ```
 
-### Show Database Tables
+### Show database tables
 
 ```mysql
 # show default database tables
@@ -51,7 +51,7 @@ SHOW TABLES FROM my_db;
 SHOW FULL TABLES FROM my_db;
 ```
 
-### Create New Table
+### Create new table
 
 ```mysql
 # create new table 'my_table' in default database
@@ -65,7 +65,7 @@ CREATE TABLE my_db.my_table (column1 TEXT, column2 INTEGER);
 
 See [MySQL data types](https://dev.mysql.com/doc/refman/8.0/en/data-types.html).
 
-### Delete Table
+### Delete table
 
 ```mysql
 # delete table from default database
@@ -82,7 +82,7 @@ DROP TABLE my_db.my_table;
 DROP TABLE IF EXISTS my_table;
 ```
 
-### Show Rows & Columns
+### Show rows & columns
 
 ```mysql
 # show all rows and columns
@@ -140,28 +140,28 @@ SELECT * FROM my_table WHERE column1 = 'value' ORDER BY column1, column2 DESC;
 SELECT * FROM my_table WHERE column1 = 'value' LIMIT 10 OFFSET 5;
 ```
 
-### Insert Rows
+### Insert rows
 
 ```mysql
 # insert new row into table
 INSERT INTO my_table (column1, column2) VALUES ('value', 10);
 ```
 
-### Update Rows
+### Update rows
 
 ```mysql
 # update existing row in table
 UPDATE my_table SET column1 = 'new_value' WHERE id = 5;
 ```
 
-### Delete Rows
+### Delete rows
 
 ```mysql
 # delete row in table
 DELETE FROM my_table WHERE id = 5;
 ```
 
-### Insert Columns
+### Insert columns
 
 ```mysql
 # add column of integer data type
@@ -174,7 +174,7 @@ ALTER TABLE my_table ADD column3 INTEGER FIRST;
 ALTER TABLE my_table ADD column3 INTEGER AFTER column2;
 ```
 
-### Modify Columns
+### Modify columns
 
 ```mysql
 # modify integer data type of column
@@ -187,14 +187,16 @@ ALTER TABLE my_table MODIFY column3 INTEGER FIRST;
 ALTER TABLE my_table MODIFY column3 INTEGER AFTER column2;
 ```
 
-### Delete Columns
+### Delete columns
 
 ```mysql
 # delete column
 ALTER TABLE my_table DROP COLUMN column3;
 ```
 
-### Join Tables
+### Join tables
+
+![Join Visualization](../img/joins.png)
 
 ```mysql
 # inner join two tables

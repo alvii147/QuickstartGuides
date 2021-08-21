@@ -1,8 +1,10 @@
 # Django Quickstart Guide
 
-## Install Django
+This guide explores how to set up a Django web application, manage database queries and create a user registration page.
 
-### Virtual Environment (optional)
+## Installing Django
+
+### Virtual Environment
 
 It's a good idea to work in a virtual environment:
 
@@ -21,7 +23,7 @@ source env/Scripts/activate
 pip3 install django
 ```
 
-## Setup Django project
+## Setting up Django project
 
 ### Start new project
 
@@ -53,7 +55,7 @@ TIME_ZONE = 'America/Toronto'
 
 Look up [tz database time zones.](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 
-## Setup Django application
+## Setting up Django application
 
 ### Start new app
 
@@ -207,9 +209,9 @@ Now `http://localhost:8000` should display the data passed:
 
 ![Homepage Data](../img/homepage_data.png)
 
-## Admin page
+## Accessing Django admin page
 
-### Apply migrations
+### Create and apply migrations
 
 Create new migrations based on the current changes made to the models:
 
@@ -236,7 +238,7 @@ Password (again):
 Superuser created successfully.
 ```
 
-### Manage users
+### Log into admin page
 
 Login to admin at `http://localhost:8000/admin/`:
 
@@ -306,7 +308,7 @@ postings = user.posting_set.all()
 user.posting_set.create(title='Posting 3', content='Posting 3 content')
 ```
 
-## User Registration Page
+## Creating a user registration page
 
 Django's built-in `UserCreationForm` includes username and password. To add additional fields to the form, create `forms.py` in the `my_app` directory and create a registration form class that inherits from the User Creation Form class and add additional fields:
 
@@ -391,7 +393,7 @@ Now, `http://localhost:8000/register/` should show the form:
 
 ![Register Form](../img/register_page.png)
 
-### Crispy Forms
+### Django Crispy Forms
 
 Crispy forms is useful for improving how forms look. Install Django Crispy Forms:
 
@@ -451,6 +453,6 @@ Update `register.html` to load Crispy Forms tags, use Crispy Forms to filter the
 </html>
 ```
 
-Now, the register page should be formatted nice:
+Now, the register page should be formatted nicely:
 
 ![Crispy Forms](../img/crispy_forms.png)
