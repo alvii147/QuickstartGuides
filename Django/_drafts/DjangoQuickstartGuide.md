@@ -2,6 +2,8 @@
 
 This guide explores how to set up a Django web application, manage database queries and create a user registration page.
 
+[toc]
+
 ## Installing Django
 
 ### Virtual Environment
