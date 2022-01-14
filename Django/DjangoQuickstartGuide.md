@@ -1,6 +1,8 @@
-# Django Quickstart Guide
+<h1>Django Quickstart Guide</h1>
 
 This guide explores how to set up a Django web application, manage database queries and create a user registration page.
+
+<h2>Contents</h2>
 
 [toc]
 
@@ -43,7 +45,7 @@ python3 manage.py runserver
 
 Django project will be live on `http://localhost:8000`:
 
-![Default Page](../img/default_page.png)
+![Default Page](img/default_page.png)
 
 ### Change time zone
 
@@ -154,7 +156,7 @@ urlpatterns = [
 
 Now `http://localhost:8000` should show `home.html`:
 
-![Homepage](../img/homepage.png)
+![Homepage](img/homepage.png)
 
 ## Passing data from Django to HTML templates
 
@@ -209,7 +211,7 @@ def home(request):
 
 Now `http://localhost:8000` should display the data passed:
 
-![Homepage Data](../img/homepage_data.png)
+![Homepage Data](img/homepage_data.png)
 
 ## Accessing Django admin page
 
@@ -244,11 +246,11 @@ Superuser created successfully.
 
 Login to admin at `http://localhost:8000/admin/`:
 
-![Admin Login](../img/admin_login.png)
+![Admin Login](img/admin_login.png)
 
 View and change user information:
 
-![Admin Page](../img/adminpage.png)
+![Admin Page](img/adminpage.png)
 
 ## Database Management
 
@@ -393,7 +395,7 @@ urlpatterns = [
 
 Now, `http://localhost:8000/register/` should show the form:
 
-![Register Form](../img/register_page.png)
+![Register Form](img/register_page.png)
 
 ### Django Crispy Forms
 
@@ -457,4 +459,4 @@ Update `register.html` to load Crispy Forms tags, use Crispy Forms to filter the
 
 Now, the register page should be formatted nicely:
 
-![Crispy Forms](../img/crispy_forms.png)
+![Crispy Forms](img/crispy_forms.png)

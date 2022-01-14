@@ -1,6 +1,8 @@
-# MySQL Cheat Sheet
+<h1>MySQL Cheat Sheet</h1>
 
 This document includes a list of useful MySQL commands.
+
+<h2>Contents</h2>
 
 [toc]
 
@@ -206,7 +208,7 @@ ALTER TABLE my_table DROP COLUMN column3;
 
 ### Join tables
 
-<img alt="Joins Venn Diagrams" src="../img/joins.png" width="500" />
+<img alt="Joins Venn Diagrams" src="img/joins.png" width="500" />
 
 ```mysql
 -- inner join two tables

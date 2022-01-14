@@ -1,6 +1,8 @@
-# Docker Cheat Sheet
+<h1>Docker Cheat Sheet</h1>
 
 This article highlights a list of useful Docker & Dockerfile commands.
+
+<h2>Contents</h2>
 
 [toc]
 
