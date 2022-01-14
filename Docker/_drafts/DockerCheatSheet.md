@@ -26,7 +26,7 @@ COPY src /usr/src/app
 WORKDIR /usr/src/app
 
 # Allow inter-container communication on port
-EXPORT 8000
+EXPOSE 8000
 
 # Run build command
 RUN echo hotdog
