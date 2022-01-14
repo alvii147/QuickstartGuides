@@ -4,7 +4,7 @@ This article highlights a list of useful Docker & Dockerfile commands.
 
 [toc]
 
-# Dockerfile Commands
+## Dockerfile Commands
 
 ```Dockerfile
 # Pull base image for build
@@ -35,102 +35,102 @@ RUN echo hotdog
 CMD ["echo", "not hotdog"]
 ```
 
-# Docker CLI Commands
+## Docker CLI Commands
 
-## Build
+### Building Images
 
-### Build an image from Dockerfile in current working directory
+Build an image from Dockerfile in current working directory:
 
 ```bash
 docker build .
 ```
 
-### Build an image from Dockerfile with name and tag
+Build an image from Dockerfile with name and tag:
 
 ```bash
 docker build -t <name>:<tag> .
 docker build --tag <name>:<tag> .
 ```
 
-### Show all locally stored images
+Show all locally stored images:
 
 ```bash
 docker image ls --all
 ```
 
-### Remove an image from local storage
+Remove an image from local storage:
 
 ```bash
 docker image rm <image name or ID>
 ```
 
-## Run
+### Running Containers
 
-### Run container using image
+Run container using image:
 
 ```bash
 docker run <image name or ID>
 ```
 
-### Run container in background
+Run container in background:
 
 ```bash
 docker run -d <image name or ID>
 docker run --detacted <image name or ID>
 ```
 
-### Run container with environment variables
+Run container with environment variables:
 
 ```bash
 docker run -e VAR1="hotdog" -e VAR2="not hotdog" <image name or ID>
 docker run --env VAR1="hotdog" --env VAR2="not hotdog" <image name or ID>
 ```
 
-### Run container in interactive mode
+Run container in interactive mode:
 
 ```bash
 docker run -it <image name or ID> /bin/bash
 docker run --interactive --tty <image name or ID> /bin/bash
 ```
 
-### Run container and publish container ports to the host
+Run container and publish container ports to the host:
 
 ```bash
 docker run -p <host port>:<container port> <image name or ID>
 docker run --publish <host port>:<container port> <image name or ID>
 ```
 
-### Run container and assign name
+Run container and assign name:
 
 ```bash
 docker run --name <container name> <image name or ID>
 ```
 
-### Show all containers
+Show all containers:
 
 ```bash
 docker container ls --all
 ```
 
-### Start container
+Start container:
 
 ```bash
 docker start <container name or ID>
 ```
 
-### Stop container
+Stop container:
 
 ```bash
 docker stop <container name or ID>
 ```
 
-### Kill container
+Kill container:
 
 ```bash
 docker kill <container name or ID>
 ```
 
-### Remove container
+Remove container:
 
 ```bash
 docker rm <container name or ID>
