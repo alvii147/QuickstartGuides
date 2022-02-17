@@ -325,4 +325,21 @@ array([ 0,  2,  4,  6,  8, 10, 12, 14])
 
 ## Array Operations
 
-### Mathematical Operations
+### Mathematics
+
+NumPy Operation | Mathematical Equivalent
+--- | ---
+`a + b` | $\large a + b$
+`a - b` | $\large a - b$
+`a * b` | $\large a \times b$
+`a / b` | $\large a \div b$
+`np.power(a, b)` | $\large a^b$
+`np.sqrt(a)` | $\large \sqrt{a}$
+`np.sin(a)` | $\large \sin{a}$
+`np.cos(a)` | $\large \cos{a}$
+`np.tan(a)` | $\large \tan{a}$
+`np.arcsin(a)` | $\large \arcsin{a}$
+`np.arccos(a)` | $\large \arccos{a}$
+`np.arctan(a)` | $\large \arctan{a}$
+`np.log(a)` | $\large \ln{a}$
+`np.log(a) / np.log(b)` | $\large \log_b{a}$
