@@ -1,0 +1,36 @@
+Bar charts
+- colors
+- side by side bar charts
+- hatch
+- border
+- error lines
+
+Histograms
+- colors
+- bins
+- hatch
+- border
+
+Line charts
+- color
+- linewidth
+- linestyle
+
+Stem plots
+- marker color
+- marker fmt
+- stem color
+- base color
+
+Pie charts
+- Color
+- explode
+- shadow
+
+Scatter plots
+- marker color
+- marker fmt
+- marker size
+- color maps
+
+Fill Between
